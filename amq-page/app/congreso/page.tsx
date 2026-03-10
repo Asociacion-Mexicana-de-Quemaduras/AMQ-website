@@ -1,151 +1,119 @@
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
+
+const gradientBar = "linear-gradient(90deg, #f97316 0%, #ea580c 30%, #9333ea 70%, #3b82f6 100%)";
 
 export default function Congreso() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Congreso 2026</h1>
-          <p className="text-xl">44° Congreso Anual Internacional</p>
-          <p className="text-lg mt-4">29 de abril - 2 de mayo, 2026 | Hermosillo, Sonora</p>
+      {/* Hero split: text left / poster right */}
+      <section className="flex flex-col md:flex-row min-h-[500px]">
+        <div className="w-full md:w-2/5 flex flex-col justify-center px-12 py-16">
+          <h1 className="text-5xl font-black text-[#1b2a4a] leading-none mb-8">
+            CONGRESO<br />2026
+          </h1>
+          <div className="flex flex-col gap-3 w-fit">
+            <a
+              href="mailto:amqsocios@gmail.com"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded text-center transition-colors"
+            >
+              ¡Clic para mas información!
+            </a>
+            <Link
+              href="/congreso/inscribete"
+              className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded text-center transition-colors"
+            >
+              ¡Regístrate!
+            </Link>
+          </div>
+        </div>
+        <div className="relative w-full md:w-3/5 min-h-[400px]">
+          <Image
+            src="/congreso-panel.png"
+            alt="44° Congreso Internacional AMQ 2026"
+            fill
+            className="object-contain md:object-cover object-top"
+          />
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-blue-900">Conoce nuestro programa</h2>
-              <p className="text-lg mb-4">
-                Ponentes internacionales, conferencias magistrales, talleres especializados y espacios de networking
-                diseñados para llevar tu experiencia al siguiente nivel.
-              </p>
-              <p className="text-lg mb-6 text-gray-600">
-                Este programa está sujeto a cambios
-              </p>
-              <a
-                href="https://www.asociacionmexicanadequemaduras.org/_files/ugd/d13e75_066a2f552b9844e3a897533c70b20cf4.pdf"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold inline-block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Descarga el programa
-              </a>
-            </div>
-            <div>
-              <Image
-                src="/congreso-panel.png"
-                alt="Programa del Congreso"
-                width={588}
-                height={317}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
+      {/* COSTOS header bar */}
+      <div className="py-4 text-center" style={{ background: gradientBar }}>
+        <h2 className="text-3xl font-black text-white tracking-widest">COSTOS</h2>
+      </div>
 
-          {/* Accommodation Section */}
-          <div className="bg-blue-50 p-8 rounded-lg mb-12 border-l-4 border-blue-600">
-            <h3 className="text-2xl font-bold mb-6 text-blue-900">Hospedaje</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Contamos con opciones de hospedaje especiales para los asistentes del congreso. Hermosillo ofrece una
-              variedad de hoteles y servicios para que disfrutes de una estancia cómoda.
-            </p>
-            <p className="text-lg text-gray-700">
-              Para más información sobre hospedaje y tarifas especiales, contáctanos a{" "}
-              <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline font-semibold">
-                amqsocios@gmail.com
-              </a>
-            </p>
-          </div>
-
-          {/* Participate Section */}
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-blue-900">¿Quieres participar?</h3>
-              <p className="text-lg mb-4">
-                Si deseas compartir tu experiencia e investigación en el próximo congreso, estamos interesados en
-                conocer tu trabajo.
-              </p>
-              <p className="text-lg mb-6 text-blue-900 font-semibold">
-                ¡Tu participación puede contribuir al avance de la atención especializada en quemaduras!
-              </p>
-              <a
-                href="https://www.asociacionmexicanadequemaduras.org/_files/ugd/d13e75_1de2363e96fc4ef08421afd91175747d.pptx?dn=FORMATO%20INSCRIPCION%20DE%20TRABAJOS%20CIENTIFICOS%20AMQ%202026.pptx"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold inline-block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Descarga el formato de participación
-              </a>
-            </div>
-            <div>
-              <Image
-                src="/congreso-panel.png"
-                alt="Participar en el Congreso"
-                width={693}
-                height={1350}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-
-          {/* Registration Section */}
-          <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-8 rounded-lg mb-12">
-            <h3 className="text-2xl font-bold mb-6">¿Listo para inscribirte?</h3>
-            <p className="text-lg mb-6">
-              Obtén más información y regístrate para el 44° Congreso Anual Internacional de la Asociación Mexicana de
-              Quemaduras.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="mailto:amqsocios@gmail.com"
-                className="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold inline-block text-center"
-              >
-                ¡Clic para más información!
-              </a>
-              <a
-                href="/congreso#registro"
-                className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold inline-block text-center"
-              >
-                ¡Regístrate!
-              </a>
-            </div>
-          </div>
-
-          {/* Costs Section */}
-          <div id="registro" className="bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6 text-blue-900">Costos de inscripción</h3>
-            <p className="text-lg text-gray-700 mb-6">
-              Los costos de inscripción varían según la categoría de participante. Para más información sobre tarifas
-              y opciones de pago, contáctanos.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="border-l-4 border-blue-600 p-6 bg-white rounded">
-                <h4 className="text-xl font-bold text-blue-900 mb-3">Inscripción Regular</h4>
-                <p className="text-gray-700 mb-2">Profesionales activos en el área de quemaduras</p>
-                <p className="text-2xl font-bold text-blue-600">Consultar tarifa</p>
-              </div>
-              <div className="border-l-4 border-blue-600 p-6 bg-white rounded">
-                <h4 className="text-xl font-bold text-blue-900 mb-3">Inscripción Estudiante</h4>
-                <p className="text-gray-700 mb-2">Estudiantes de medicina y especialidades afines</p>
-                <p className="text-2xl font-bold text-blue-600">Tarifa reducida</p>
-              </div>
-            </div>
-            <p className="text-center mt-8 text-lg">
-              Para más información, escribe a{" "}
-              <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline font-semibold">
-                amqsocios@gmail.com
-              </a>
-            </p>
-          </div>
+      {/* Three cost images */}
+      <section className="grid grid-cols-1 md:grid-cols-3">
+        <div className="relative min-h-[400px]">
+          <Image src="/congreso-costos-1.png" alt="Datos de transferencia" fill className="object-cover" />
+        </div>
+        <div className="relative min-h-[400px]">
+          <Image src="/congreso-costos-2.png" alt="Costo de inscripción" fill className="object-cover" />
+        </div>
+        <div className="relative min-h-[400px]">
+          <Image src="/congreso-costos-3.png" alt="Congreso highlights" fill className="object-cover" />
         </div>
       </section>
+
+      {/* Conoce nuestro programa */}
+      <section
+        className="grid md:grid-cols-2 items-center min-h-[200px]"
+        style={{ background: gradientBar }}
+      >
+        <div className="px-12 py-10">
+          <h2 className="text-3xl font-black text-white leading-tight">
+            Conoce<br />nuestro programa
+          </h2>
+        </div>
+        <div className="px-12 py-10 text-white">
+          <p className="mb-4">
+            Ponentes internacionales, conferencias magistrales, talleres especializados y espacios
+            de networking diseñados para llevar tu experiencia al siguiente nivel.
+          </p>
+          <p className="mb-4">Haz clic y accede al programa completo.</p>
+          <a
+            href="https://www.asociacionmexicanadequemaduras.org/_files/ugd/d13e75_066a2f552b9844e3a897533c70b20cf4.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-bold hover:opacity-80 block"
+          >
+            DESCARGA AQUÍ
+          </a>
+          <p className="text-xs mt-2 opacity-80">*Este programa está sujeto a cambios</p>
+        </div>
+      </section>
+
+      {/* HOSPEDAJE header bar */}
+      <div className="py-4 text-center" style={{ background: gradientBar }}>
+        <h2 className="text-3xl font-black text-white tracking-widest">HOSPEDAJE</h2>
+      </div>
+
+      {/* Hospedaje images */}
+      <section className="grid grid-cols-2 md:grid-cols-4">
+        {[1, 2, 3, 4].map((n) => (
+          <div key={n} className="relative min-h-[220px]">
+            <Image
+              src={`/congreso-hospedaje-${n}.png`}
+              alt={`Hospedaje opción ${n}`}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </section>
+
+      <div className="py-8 px-8 text-center text-gray-700">
+        <p className="text-lg">
+          Para más información sobre hospedaje y tarifas especiales, contáctanos a{" "}
+          <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline font-semibold">
+            amqsocios@gmail.com
+          </a>
+        </p>
+      </div>
 
       <Footer />
     </div>

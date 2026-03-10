@@ -7,91 +7,98 @@ export default function Socios() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Socios</h1>
-          <p className="text-xl">Únete a nuestra comunidad de profesionales dedicados a la atención de quemaduras</p>
+      {/* CTA split: navy left / photo right */}
+      <section className="flex flex-col md:flex-row min-h-[320px]">
+        <div
+          className="w-full md:w-1/2 flex flex-col items-center justify-center text-center px-10 py-16"
+          style={{ backgroundColor: "#1b2a4a" }}
+        >
+          <p className="text-white font-bold text-2xl mb-4 max-w-sm leading-snug">
+            Únete y sé parte de la prevención y tratamiento de quemaduras.
+          </p>
+          <p className="text-white font-bold text-xl mb-8">¡Haz la diferencia hoy mismo!</p>
+          <a
+            href="#requisitos"
+            className="border border-white text-white px-6 py-2 text-sm font-medium hover:bg-white hover:text-[#1b2a4a] transition-colors"
+          >
+            Conoce los requisitos
+          </a>
+        </div>
+        <div className="relative w-full md:w-1/2 min-h-[280px]">
+          <Image
+            src="/socios-panel.png"
+            alt="Formación para profesionales médicos"
+            fill
+            className="object-cover"
+          />
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-blue-900">Únete a la AMQ</h2>
-              <p className="text-lg mb-4">
-                Únete y sé parte de la prevención y tratamiento de quemaduras. ¡Haz la diferencia hoy mismo!
-              </p>
-              <p className="text-lg mb-6">
-                La Asociación Mexicana de Quemaduras es una organización dedicada a promover la atención integral
-                del paciente quemado a través de la investigación, educación y capacitación de profesionales de la salud.
-              </p>
-              <a
-                href="/socios#requisitos"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold inline-block"
-              >
-                Conoce los requisitos
-              </a>
-            </div>
-            <div>
-              <Image
-                src="/../../public/socios-panel.png"
-                alt="Formación para profesionales médicos"
-                width={982}
-                height={724}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+      {/* Cuota de Anualidad */}
+      <section id="requisitos" className="py-12 px-8">
+        <h2 className="text-3xl font-bold text-[#1b2a4a] mb-1">Cuota de Anualidad</h2>
+        <hr className="border-gray-300 mb-8" />
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <span className="text-6xl font-black text-[#1b2a4a]">$1,500</span>
+            <span className="text-3xl font-bold text-[#1b2a4a]">MXN</span>
           </div>
+          <div className="text-gray-500 text-sm leading-relaxed">
+            <p>
+              En caso de requerir factura, enviar correo a{" "}
+              <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline">
+                amqsocios@gmail.com
+              </a>{" "}
+              o a nuestro{" "}
+              <span className="font-semibold text-gray-700">whatsapp 66 23 27 40 63</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
-          {/* Annual Fee Section */}
-          <div id="requisitos" className="bg-gray-50 p-8 rounded-lg mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-blue-900">Cuota de Anualidad</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-3xl font-bold text-blue-600 mb-4">$1,500 MXN</h4>
-                <p className="text-lg mb-4">
-                  En caso de requerir factura, enviar correo a{" "}
-                  <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline">
-                    amqsocios@gmail.com
-                  </a>{" "}
-                  o a nuestro WhatsApp{" "}
-                  <a href="tele:+52 66 23 27 40 63" className="text-blue-600 hover:underline">
-                    66 23 27 40 63
-                  </a>
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-blue-900">Datos de transferencia</h4>
-                <div className="space-y-3 text-lg">
-                  <div>
-                    <p className="font-semibold">Nombre del titular:</p>
-                    <p>Asociación Mexicana de Quemaduras A.C</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Número de cuenta:</p>
-                    <p>0120386022</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">CLABE Interbancaria:</p>
-                    <p>012180001203860226</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Código SWIFT:</p>
-                    <p>BCMRMXMMPYM</p>
-                  </div>
-                </div>
-                <p className="text-sm mt-4">
-                  Es importante enviar el comprobante de pago a nuestro correo{" "}
-                  <a href="mailto:amqsocios@gmail.com" className="text-blue-600 hover:underline">
-                    amqsocios@gmail.com
-                  </a>
-                </p>
-              </div>
+      {/* Dark divider */}
+      <div style={{ backgroundColor: "#1b2a4a", height: "12px" }} />
+
+      {/* Datos de transferencia card */}
+      <section className="py-16 px-4 flex justify-center">
+        <div
+          className="rounded-lg p-10 text-center max-w-md w-full"
+          style={{ backgroundColor: "#1b2a4a" }}
+        >
+          <h3 className="text-white font-bold text-3xl mb-6">
+            Datos de<br />transferencia
+          </h3>
+          <p className="text-white font-black text-3xl tracking-widest mb-6">BBVA</p>
+          <div className="space-y-4 text-sm">
+            <div>
+              <p className="text-white/60 font-semibold uppercase tracking-wide">
+                NOMBRE DEL TITULAR:
+              </p>
+              <p className="text-white font-medium">Asociación Mexicana de Quemaduras A.C</p>
+            </div>
+            <div>
+              <p className="text-white/60 font-semibold uppercase tracking-wide">
+                NÚMERO DE CUENTA:
+              </p>
+              <p className="text-white font-medium">0120386022</p>
+            </div>
+            <div>
+              <p className="text-white/60 font-semibold uppercase tracking-wide">
+                CLABE INTERBANCARIA:
+              </p>
+              <p className="text-white font-medium">012180001203860226</p>
+            </div>
+            <div>
+              <p className="text-white/60 font-semibold uppercase tracking-wide">
+                CÓDIGO SWIFT:
+              </p>
+              <p className="text-white font-medium">BCMRMXMMPYM</p>
             </div>
           </div>
+          <p className="mt-8 text-white/80 text-xs bg-white/10 rounded px-3 py-2">
+            Es importante enviar el comprobante de pago a nuestro correo{" "}
+            <span className="font-semibold">amqsocios@gmail.com</span>
+          </p>
         </div>
       </section>
 
