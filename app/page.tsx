@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import HeroCarousel from "@/app/components/HeroCarousel";
 
 export default function Home() {
   return (
@@ -9,37 +10,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Carousel Section */}
-      <section className="relative overflow-hidden">
-        <Image
-          src="/carousel-1.png"
-          alt="44° Congreso Internacional AMQ 2026"
-          width={1960}
-          height={976}
-          className="w-full object-cover"
-          priority
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <Image
-            src="/logo-amq-flame.png"
-            alt="Asociación Mexicana de Quemaduras, A.C."
-            width={120}
-            height={80}
-            className="object-contain mb-4"
-          />
-          <h1 className="text-5xl md:text-7xl font-extrabold text-orange-600 leading-tight drop-shadow">
-            44° CONGRESO<br />INTERNACIONAL
-          </h1>
-          <p className="text-xl md:text-2xl font-bold text-orange-600 mt-2 drop-shadow">
-            ASOCIACIÓN MEXICANA DE QUEMADURAS A.C.
-          </p>
-          <Link
-            href="/congreso"
-            className="mt-6 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors"
-          >
-            Más información
-          </Link>
-        </div>
-      </section>
+      <HeroCarousel />
 
       {/* Bienvenidos Section */}
       <section
@@ -107,12 +78,7 @@ export default function Home() {
         {/* Panel 1: Congreso */}
         <div className="relative overflow-hidden">
           <Image src="/carousel-1.png" alt="44° Congreso Internacional" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-4">
-            <Image src="/logo-amq-flame.png" alt="AMQ" width={60} height={40} className="object-contain mb-2" />
-            <p className="text-orange-400 font-extrabold text-xl leading-tight">
-              44° CONGRESO<br />INTERNACIONAL
-            </p>
-            <p className="text-orange-400 font-bold text-xs mt-1">ASOCIACIÓN MEXICANA DE QUEMADURAS A.C.</p>
+          <div className="absolute inset-0 hover:bg-black/40 flex flex-col items-center justify-end text-center p-4">
             <Link
               href="/congreso/inscribete"
               className="mt-3 bg-orange-600 hover:bg-orange-700 text-white font-bold px-5 py-2 rounded text-sm transition-colors"
@@ -125,7 +91,7 @@ export default function Home() {
         {/* Panel 2: Mesa directiva */}
         <div className="relative overflow-hidden">
           <Image src="/nosotros-panel.png" alt="Mesa directiva" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 hover:bg-black/40 flex flex-col items-center justify-center text-center px-4">
             <Link href="/nosotros" className="text-white font-bold text-2xl underline hover:text-orange-300">
               Mesa directiva
             </Link>
@@ -136,7 +102,7 @@ export default function Home() {
         {/* Panel 3: Eventos */}
         <div className="relative overflow-hidden">
           <Image src="/socios-panel.png" alt="Eventos" fill className="object-cover" />
-          <div className="absolute inset-0 bg-white/20 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 hover:bg-black/20 flex flex-col items-center justify-center text-center px-4">
             <Link href="/eventos" className="text-white font-bold text-2xl underline hover:text-orange-300 drop-shadow">
               Eventos
             </Link>

@@ -9,29 +9,29 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm">
-      <nav className="container mx-auto px-4 py-3">
+      <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Left: AMQ square logo */}
+          {/* Left: AMQ logos */}
+          <div className="flex items-center">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/logo-amq-square.png"
+              src="/logo-amq-square.jpeg"
               alt="AMQ Logo"
               width={70}
               height={70}
               className="object-contain"
             />
           </Link>
-
-          {/* Center: flame logo */}
           <Link href="/" className="flex flex-col items-center text-center">
             <Image
               src="/logo-amq-flame.png"
               alt="Asociación Mexicana de Quemaduras, A.C."
-              width={120}
+              width={100}
               height={70}
               className="object-contain"
             />
           </Link>
+          </div>
 
           {/* Right: navigation */}
           <ul className="flex items-center space-x-6 text-sm font-medium text-gray-700">
