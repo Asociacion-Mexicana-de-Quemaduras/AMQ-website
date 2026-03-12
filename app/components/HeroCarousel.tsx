@@ -11,13 +11,17 @@ const slides = [
     text: null,
     buttonLabel: "Más información",
     buttonHref: "/congreso",
+    align: "center" as const,
+    buttonStyle: "orange-rect",
   },
   {
     src: "/carousel-2.png",
     alt: "Afiliate a la AMQ",
     text: "Ayuda a transformar vidas",
-    buttonLabel: "Afiliate",
+    buttonLabel: "¡Afíliate!",
     buttonHref: "/socios",
+    align: "left" as const,
+    buttonStyle: "navy-rect",
   },
 ];
 
@@ -33,7 +37,7 @@ export default function HeroCarousel() {
   };
 
   useEffect(() => {
-    const timer = setInterval(next, 15000);
+    const timer = setInterval(next, 25000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -53,18 +57,31 @@ export default function HeroCarousel() {
               className="object-cover object-center"
               priority={i === 0}
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-10">
-              {slide.text && (
-                <h2 className="text-white text-5xl font-bold drop-shadow-lg mb-4">
-                  {slide.text}
-                </h2>
-              )}
-              <Link
-                href={slide.buttonHref}
-                className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors"
+            <div className="absolute inset-0 grid grid-cols-6">
+              <div
+                className={`flex flex-col col-span-4 col-start-2 ${
+                  slide.align === "left"
+                    ? "justify-center items-start"
+                    : "justify-end pb-10 text-center items-center"
+                }`}
               >
-                {slide.buttonLabel}
-              </Link>
+                {slide.text && (
+                  <h2 className="text-white text-7xl font-bold drop-shadow-lg mb-6 leading-tight max-w-xs">
+                    {slide.text}
+                  </h2>
+                )}
+                <Link
+                  href={slide.buttonHref}
+                  className={
+                    slide.buttonStyle === "navy-rect"
+                      ? "text-white font-semibold px-6 py-3 text-base transition-colors"
+                      : "bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors"
+                  }
+                  style={slide.buttonStyle === "navy-rect" ? { backgroundColor: "#1b2a4a" } : undefined}
+                >
+                  {slide.buttonLabel}
+                </Link>
+              </div>
             </div>
           </div>
         ))}

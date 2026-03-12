@@ -92,10 +92,14 @@ export default function Home() {
         <div className="relative overflow-hidden">
           <Image src="/nosotros-panel.png" alt="Mesa directiva" fill className="object-cover" />
           <div className="absolute inset-0 hover:bg-black/40 flex flex-col items-center justify-center text-center px-4">
-            <Link href="/nosotros" className="text-white font-bold text-2xl underline hover:text-orange-300">
-              Mesa directiva
+            <p className="text-white font-bold text-2xl drop-shadow">Mesa directiva</p>
+            <Link
+              href="/nosotros"
+              className="mt-3 text-white font-semibold px-6 py-3 text-base transition-colors"
+              style={{ backgroundColor: "#1b2a4a" }}
+            >
+              ¡Conócenos!
             </Link>
-            <p className="text-white mt-2">¡Conócenos!</p>
           </div>
         </div>
 
@@ -103,12 +107,14 @@ export default function Home() {
         <div className="relative overflow-hidden">
           <Image src="/socios-panel.png" alt="Eventos" fill className="object-cover" />
           <div className="absolute inset-0 hover:bg-black/20 flex flex-col items-center justify-center text-center px-4">
-            <Link href="/eventos" className="text-white font-bold text-2xl underline hover:text-orange-300 drop-shadow">
-              Eventos
+            <p className="text-white font-bold text-2xl drop-shadow">Eventos</p>
+            <Link
+              href="/eventos"
+              className="mt-3 text-white font-semibold px-6 py-3 text-base transition-colors"
+              style={{ backgroundColor: "#1b2a4a" }}
+            >
+              Pláticas y conferencias para ustedes.
             </Link>
-            <p className="text-white mt-2 drop-shadow font-medium">
-              Pláticas y conferencias<br />para ustedes.
-            </p>
           </div>
         </div>
       </section>

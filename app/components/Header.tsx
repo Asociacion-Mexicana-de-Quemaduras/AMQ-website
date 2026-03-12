@@ -12,21 +12,21 @@ export default function Header() {
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Left: AMQ logos */}
-          <div className="flex items-center">
+          <div className="flex items-center py-4">
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo-amq-square.jpeg"
               alt="AMQ Logo"
-              width={70}
+              width={110}
               height={70}
               className="object-contain"
             />
           </Link>
           <Link href="/" className="flex flex-col items-center text-center">
             <Image
-              src="/logo-amq-flame.png"
+              src="/logo-amq.png"
               alt="Asociación Mexicana de Quemaduras, A.C."
-              width={100}
+              width={110}
               height={70}
               className="object-contain"
             />
